@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
 </head>
 <body>
-    
+
+  <h1>My Library</h1>
+  <button id="new-book-btn">+ New Book</button>
+
+  <form id="book-form" style="display: none;">
+    <h3>Add a New Book</h3>
+    <input type="text" id="title" placeholder="Title" required />
+    <input type="text" id="author" placeholder="Author" required />
+    <input type="number" id="pages" placeholder="Pages" required />
+    <label>
+      <input type="checkbox" id="read" />
+      Read
+    </label>
+    <button type="submit">Add Book</button>
+  </form>
+
+  <div id="library-container"></div>
+
+  <!-- ✅ Move this to the end of <body> -->
+  <script src="script.js"></script>
 </body>
 </html>
