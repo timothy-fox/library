@@ -1,15 +1,23 @@
+const myLibrary = [];
+
 function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function() {return `${this.title} by ${this.author}, ${this.pages}, ${this.read}`};
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 }
 
-// let a = function() {return `tests`};
-// console.log(a());
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'not read yet');
+function addBookToLibrary(title, author, pages, read) {
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+}
 
-//theHobbit.info();
+function displayLibrary() {
+    console.table(myLibrary, ['id', 'title', 'author', 'pages', 'read']);
+}
 
-console.log(theHobbit.info());
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', '295', 'not read yet');
+addBookToLibrary('Dune', 'Frank Herbert', '412', 'read');
+
+displayLibrary();
